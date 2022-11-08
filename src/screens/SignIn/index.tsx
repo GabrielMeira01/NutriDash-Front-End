@@ -7,7 +7,13 @@ import { styles } from './styles';
 import { NavigationStackProp } from 'react-navigation-stack';
 
 import { validateLoginUser } from '../../context/auth';
+import { LogBox } from 'react-native';
 
+// Ignore log notification by message:
+LogBox.ignoreLogs(['Warning: ...']);
+
+// Ignore all log notifications:
+LogBox.ignoreAllLogs();
 type Props = {
   navigation: NavigationStackProp<{ userId: string }>;
 };
@@ -48,7 +54,7 @@ export function SignIn(props: Props) {
 
             <TouchableOpacity
               style={styles.button}
-              onPress={() => loginUser(email, password)}
+              onPress={() => loginUser('Teste@gmail.com', '12341234')}
             >
               <Text style={styles.textButton}>Acessar</Text>
             </TouchableOpacity>

@@ -9,6 +9,7 @@ import { SignUp } from '../screens/SignUp';
 import { Dairy } from '../screens/Dairy';
 import { Account } from '../screens/Account';
 import { ForgetPassword } from '../screens/ForgetPassword';
+import { Splash } from '../screens/Splash';
 
 const Stack = createNativeStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
@@ -70,8 +71,13 @@ export function AppRoutes() {
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen
+        name="Splash"
+        component={Splash}
+      />
+      <Stack.Screen
         name="SignIn"
         component={SignIn}
+        options={{gestureEnabled:false}}
       />
       <Stack.Screen
         name="SignUp"
@@ -86,6 +92,8 @@ export function AppRoutes() {
         name="ForgetPassword"
         component={ForgetPassword}
       />
+
+   
     </Stack.Navigator>
   );
 }
