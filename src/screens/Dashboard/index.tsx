@@ -164,7 +164,7 @@ export function Dashboard() {
             title={"Proteina"}
             content={`Você consumiu ${proteine.toFixed(
               0
-            )} Kcal de ${getProtein?.toFixed(0)} Kcal`}
+            )} Kcal até o momento`}
           />
         </View>
       </SafeAreaView>

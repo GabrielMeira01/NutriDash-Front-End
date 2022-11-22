@@ -54,7 +54,7 @@ export function SignIn(props: Props) {
 
             <TouchableOpacity
               style={styles.button}
-              onPress={() => loginUser('Teste@gmail.com', '12341234')}
+              onPress={() => loginUser(email, password)}
             >
               <Text style={styles.textButton}>Acessar</Text>
             </TouchableOpacity>

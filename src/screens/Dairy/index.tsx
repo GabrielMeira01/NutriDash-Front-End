@@ -85,8 +85,6 @@ export function Dairy() {
         // setNewProteinG(data.proteinG);
         setNewUserItem(data.newUserItem);
         setNewFood(data.newFood);
-      } else {
-        Alert.alert("Erro, tente novamente");
       }
     }
   });
@@ -119,38 +117,38 @@ export function Dairy() {
     });
   };
 
-  const addUserItem = async () => {
-    onAuthStateChanged(auth, async (user) => {
-      if (
-        userItem !== "" &&
-        lipidG !== "" &&
-        carbohydrateG !== "" &&
-        proteinG !== ""
-      ) {
-        if (user) {
-          const uid = user.uid;
-          setDoc(
-            doc(db, "Alimentos", uid),
-            {
-              items: arrayUnion({ userItem, lipidG, carbohydrateG, proteinG }),
-            },
-            { merge: true }
-          );
-        }
+  // const addUserItem = async () => {
+  //   onAuthStateChanged(auth, async (user) => {
+  //     if (
+  //       userItem !== "" &&
+  //       lipidG !== "" &&
+  //       carbohydrateG !== "" &&
+  //       proteinG !== ""
+  //     ) {
+  //       if (user) {
+  //         const uid = user.uid;
+  //         setDoc(
+  //           doc(db, "Alimentos", uid),
+  //           {
+  //             items: arrayUnion({ userItem, lipidG, carbohydrateG, proteinG }),
+  //           },
+  //           { merge: true }
+  //         );
+  //       }
 
-        Alert.alert("item adicionado");
-      } else if (
-        userItem === "" ||
-        lipidG === "" ||
-        carbohydrateG === "" ||
-        proteinG === ""
-      ) {
-        Alert.alert("Campo vazio, digite um item");
-      } else {
-        Alert.alert("Erro, tente novamente");
-      }
-    });
-  };
+  //       Alert.alert("item adicionado");
+  //     } else if (
+  //       userItem === "" ||
+  //       lipidG === "" ||
+  //       carbohydrateG === "" ||
+  //       proteinG === ""
+  //     ) {
+  //       Alert.alert("Campo vazio, digite um item");
+  //     } else {
+  //       Alert.alert("Erro, tente novamente");
+  //     }
+  //   });
+  // };
 
   const displayItems = async () => {
     onAuthStateChanged(auth, async (user) => {

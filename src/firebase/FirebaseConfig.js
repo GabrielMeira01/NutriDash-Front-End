@@ -4,14 +4,14 @@ import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage"
 
 const firebaseConfig = {
-  apiKey: "",
-  authDomain: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: "",
-  measurementId: ""
-}
+  apiKey: "AIzaSyDW3kj6W0QLeiGRs9UKuk-7TqNTOzWDIQE",
+  authDomain: "nutridashapp.firebaseapp.com",
+  projectId: "nutridashapp",
+  storageBucket: "nutridashapp.appspot.com",
+  messagingSenderId: "727041058165",
+  appId: "1:727041058165:web:67077adaa4567f27c49f3c",
+  measurementId: "G-Q2SDYQQGYL"
+};
 
 const app= initializeApp(firebaseConfig);
 
